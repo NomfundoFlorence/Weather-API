@@ -4,7 +4,9 @@ const e = require("express");
 
 const app = express();
 
-app.get("/", async (req, res) => {
+app.use(express.static("public"));
+
+app.get("/weather", async (req, res) => {
   // const location = req.query.location;
   const location = "Johannesburg";
 
