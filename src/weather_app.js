@@ -8,6 +8,10 @@ const getCoordinates = async (location) => {
     `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${WEATHER_API_KEY}`
   );
 
+  if (response.data.length === 0) {
+    throw new Error("Location not found");
+  }
+
   const coordinates = {
     latitude: response.data[0].lat,
     longitude: response.data[0].lon,
