@@ -1,6 +1,8 @@
 const fetchWeather = async () => {
-  // const location = document.getElementById("location").value.trim();
-  const response = await fetch(`http://localhost:3000/weather`);
+  const location = document.getElementById("location").value.trim();
+  const response = await fetch(
+    `http://localhost:3000/weather?location=${location}`
+  );
   const weatherData = await response.json();
 
   const icon = document.createElement("img");
@@ -9,6 +11,11 @@ const fetchWeather = async () => {
   icon.alt = weatherData.weather[0].description;
 
   const weatherContainer = document.getElementById("weather-container");
+
+  if (weatherContainer.childElementCount > 0) {
+    weatherContainer.removeChild(weatherContainer.firstChild)
+  }
+  
   weatherContainer.prepend(icon);
 
   const city = document.getElementById("city-name");

@@ -1,5 +1,5 @@
 const express = require("express");
-const { getWeather, getCoordinates } = require("./src/weather_app");
+const { getWeather } = require("./src/weather_app");
 const e = require("express");
 
 const app = express();
@@ -7,8 +7,7 @@ const app = express();
 app.use(express.static("public"));
 
 app.get("/weather", async (req, res) => {
-  // const location = req.query.location;
-  const location = "Johannesburg";
+  const location = req.query.location;
 
   try {
     const weatherData = await getWeather(location);

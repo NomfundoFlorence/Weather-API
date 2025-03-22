@@ -26,7 +26,4 @@ const getWeather = async (location) => {
   return response.data;
 };
 
-// getCoordinates("Johannesburg").then((data) => console.log(data));
-// getWeather("Johannesburg").then((data) => console.log(data));
-
-module.exports = { getWeather, getCoordinates };
+module.exports = { getWeather };
