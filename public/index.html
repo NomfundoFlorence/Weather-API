@@ -3,11 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Weather App</title>
   </head>
   <body>
-    <input type="text" id="location" placeholder="Enter city name" />
-    <button id="get-weather-btn">Get Weather</button>
+    <!-- From Uiverse.io by zanina-yassine -->
+    <div class="container">
+      <div class="cloud front">
+        <span class="left-front"></span>
+        <span class="right-front"></span>
+      </div>
+      <span class="sun sunshine"></span>
+      <span class="sun"></span>
+      <div class="cloud back">
+        <span class="left-back"></span>
+        <span class="right-back"></span>
+      </div>
+    </div>
+    <div id="search-container">
+      <input type="text" id="location" placeholder="Enter city name" />
+      <button id="get-weather-btn">Get Weather</button>
+    </div>
     <div id="main-container">
       <div id="weather-container">
         <h1 id="city-name"></h1>
