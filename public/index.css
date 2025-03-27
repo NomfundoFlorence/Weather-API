@@ -1,17 +1,16 @@
 body {
   margin: 0;
   height: 100%;
-  /* background-image: url("https://unsplash.com/photos/blue-sky-and-white-clouds-Mn6WChN0Q1oo"); */
 }
 
 .container {
+  margin-top: 30%;
   width: 250px;
   height: 250px;
   padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: #233ad1; */
 }
 
 .cloud {
@@ -114,15 +113,33 @@ body {
   }
 }
 
+#background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(5px);
+}
+
 #main-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("./images/sonny-mauricio-kIr8e-01eAw-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+}
+
+.container,
+#search-container,
+#weather-container {
+  position: relative;
+  z-index: 1;
 }
 
 #search-container {
@@ -140,7 +157,7 @@ body {
   border: 1.5px solid #000;
   border-radius: 50px;
   text-align: center;
-  color: #233ad1;
+  color: #183153;
   font-weight: 700;
 }
 
