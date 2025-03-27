@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  background-color: #ffffff;
+  height: 100%;
+  /* background-image: url("https://unsplash.com/photos/blue-sky-and-white-clouds-Mn6WChN0Q1oo"); */
 }
 
 .container {
@@ -10,6 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* background-color: #233ad1; */
 }
 
 .cloud {
@@ -116,6 +118,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("./images/sonny-mauricio-kIr8e-01eAw-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 #search-container {
@@ -137,11 +144,16 @@ body {
   font-weight: 700;
 }
 
+.focus {
+  box-shadow: 0px 0px 30px 0px rgb(178, 245, 78);
+}
+
 #get-weather-btn {
   height: 50px;
   width: 40%;
   margin-top: 15px;
   color: #fff;
+  font-weight: 700;
   position: relative;
   display: flex;
   justify-content: center;

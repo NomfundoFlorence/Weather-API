@@ -15,11 +15,6 @@ const fetchWeather = async (location) => {
   }
   weatherContainer.prepend(icon);
 
-  const mainContainer = document.getElementById("main-container");
-  if (mainContainer.childElementCount > 1) {
-    mainContainer.removeChild(mainContainer.lastChild);
-  }
-
   const city = document.getElementById("city-name");
   city.textContent = `${weatherData.name}, ${weatherData.sys.country}`;
 
@@ -44,11 +39,24 @@ getWeatherBtn.addEventListener("click", () => {
   const location = document.getElementById("location").value.trim();
 
   if (!location) {
+    const location = document.getElementById("location");
+    location.classList.add("focus");
+    location.style.borderColor = "rgb(178, 245, 78)"
+
     const locationError = document.createElement("p");
-    const mainContainer = document.getElementById("main-container");
+    const searchContainer = document.getElementById("search-container");
 
     locationError.textContent = "Please provide a city name";
-    mainContainer.appendChild(locationError);
+    locationError.style.color = "red";
+    locationError.style.fontSize = "1rem";
+    searchContainer.prepend(locationError);
+
+    setTimeout(() => {
+      location.classList.remove("focus");
+      location.style.borderColor = "#000";
+      searchContainer.removeChild(locationError);
+    }, 1500);
+
     return;
   }
 
