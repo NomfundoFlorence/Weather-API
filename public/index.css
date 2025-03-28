@@ -183,3 +183,33 @@ body {
   cursor: pointer;
   border: none;
 }
+
+#icon-temp-location-container {
+  display: flex;
+  background-color: #fcbb04;
+  justify-content: space-between;
+  justify-self: center;
+  align-items: center;
+  width: 100%;
+}
+
+#weather-container {
+  background-color: #4c9beb;
+  width: 85%;
+  /* justify-content: center; */
+  text-align: center;
+}
+
+#icon-city-container {
+  /* background-color: #fcbb04; */
+  width: 50%;
+  margin: 10px;
+  justify-content: center;
+}
+
+#temp-container {
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  /* background-color: #fcbb04; */
+}

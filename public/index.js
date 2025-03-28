@@ -8,12 +8,14 @@ const fetchWeather = async (location) => {
   const ICON_CODE = weatherData.weather[0].icon;
   icon.src = `http://openweathermap.org/img/wn/${ICON_CODE}.png`;
   icon.alt = weatherData.weather[0].description;
+  icon.style.height = "55px";
+  icon.style.width = "55px";
 
-  const weatherContainer = document.getElementById("weather-container");
-  if (weatherContainer.childElementCount > 0) {
-    weatherContainer.removeChild(weatherContainer.firstChild);
+  const iconCityContainer = document.getElementById("icon-city-container");
+  if (iconCityContainer.childElementCount > 0) {
+    iconCityContainer.removeChild(iconCityContainer.firstChild);
   }
-  weatherContainer.prepend(icon);
+  iconCityContainer.prepend(icon);
 
   const city = document.getElementById("city-name");
   city.textContent = `${weatherData.name}, ${weatherData.sys.country}`;
@@ -41,7 +43,7 @@ getWeatherBtn.addEventListener("click", () => {
   if (!location) {
     const location = document.getElementById("location");
     location.classList.add("focus");
-    location.style.borderColor = "rgb(178, 245, 78)"
+    location.style.borderColor = "rgb(178, 245, 78)";
 
     const locationError = document.createElement("p");
     const searchContainer = document.getElementById("search-container");
