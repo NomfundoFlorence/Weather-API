@@ -63,4 +63,7 @@ getWeatherBtn.addEventListener("click", () => {
   }
 
   fetchWeather(location);
+
+  const weatherContainer = document.getElementById("weather-container")
+  weatherContainer.style.display = "block"
 });

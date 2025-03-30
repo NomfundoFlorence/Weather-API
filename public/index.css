@@ -194,10 +194,13 @@ body {
 }
 
 #weather-container {
+  display: none;
+  position: absolute;
+  margin-top: 90%;
   background-color: #4c9beb;
   width: 85%;
-  /* justify-content: center; */
   text-align: center;
+  z-index: 10;
 }
 
 #icon-city-container {
