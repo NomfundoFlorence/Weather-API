@@ -36,6 +36,12 @@ const fetchWeather = async (location) => {
   maxTemp.textContent = `Max temp: ${weatherData.main.temp_max}`;
 };
 
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    document.getElementById("get-weather-btn").click();
+  }
+});
+
 const getWeatherBtn = document.getElementById("get-weather-btn");
 getWeatherBtn.addEventListener("click", () => {
   const location = document.getElementById("location").value.trim();
@@ -64,6 +70,6 @@ getWeatherBtn.addEventListener("click", () => {
 
   fetchWeather(location);
 
-  const weatherContainer = document.getElementById("weather-container")
-  weatherContainer.style.display = "block"
+  const weatherContainer = document.getElementById("weather-container");
+  weatherContainer.style.display = "block";
 });
