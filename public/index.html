@@ -9,6 +9,14 @@
   </head>
   <body>
     <div id="main-container">
+      <div class="toggle-button-cover">
+        <div class="button r" id="button-3">
+          <input type="checkbox" class="checkbox" />
+          <div class="knobs"></div>
+          <div class="layer"></div>
+        </div>
+      </div>
+
       <img
         src="./images\sonny-mauricio-kIr8e-01eAw-unsplash.jpg"
         alt="clouds"
@@ -29,10 +37,19 @@
         <input type="text" id="location" placeholder="Enter city name" />
         <button id="get-weather-btn">Get Weather</button>
       </div>
+
+      <section class="dots-container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </section>
+
       <div id="weather-container">
         <div id="icon-temp-location-container">
           <div id="icon-city-container">
-            <h1 id="city-name"></h1>
+            <h2 id="city-name"></h2>
           </div>
           <div id="temp-container">
             <h2 id="temperature"></h2>
@@ -41,7 +58,7 @@
         <p id="feels-like"></p>
         <p id="min-temperature"></p>
         <p id="max-temperature"></p>
-        <p id="humidity"></p>
+        <!-- <p id="humidity"></p> -->
       </div>
     </div>
 

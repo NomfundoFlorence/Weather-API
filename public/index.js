@@ -4,18 +4,18 @@ const fetchWeather = async (location) => {
   );
   const weatherData = await response.json();
 
-  const icon = document.createElement("img");
-  const ICON_CODE = weatherData.weather[0].icon;
-  icon.src = `http://openweathermap.org/img/wn/${ICON_CODE}.png`;
-  icon.alt = weatherData.weather[0].description;
-  icon.style.height = "55px";
-  icon.style.width = "55px";
+  // const icon = document.createElement("img");
+  // const ICON_CODE = weatherData.weather[0].icon;
+  // icon.src = `http://openweathermap.org/img/wn/${ICON_CODE}.png`;
+  // icon.alt = weatherData.weather[0].description;
+  // icon.style.height = "55px";
+  // icon.style.width = "55px";
 
-  const iconCityContainer = document.getElementById("icon-city-container");
-  if (iconCityContainer.childElementCount > 0) {
-    iconCityContainer.removeChild(iconCityContainer.firstChild);
-  }
-  iconCityContainer.prepend(icon);
+  // const iconCityContainer = document.getElementById("icon-city-container");
+  // if (iconCityContainer.childElementCount > 0) {
+  //   iconCityContainer.removeChild(iconCityContainer.firstChild);
+  // }
+  // iconCityContainer.prepend(icon);
 
   const city = document.getElementById("city-name");
   city.textContent = `${weatherData.name}, ${weatherData.sys.country}`;
@@ -26,8 +26,8 @@ const fetchWeather = async (location) => {
   const feelsLike = document.getElementById("feels-like");
   feelsLike.textContent = `Feels like: ${weatherData.main.feels_like}`;
 
-  const humidity = document.getElementById("humidity");
-  humidity.textContent = `Humidity: ${weatherData.main.humidity}`;
+  // const humidity = document.getElementById("humidity");
+  // humidity.textContent = `Humidity: ${weatherData.main.humidity}`;
 
   const minTemp = document.getElementById("min-temperature");
   minTemp.textContent = `Min temp: ${weatherData.main.temp_min}`;
@@ -65,11 +65,23 @@ getWeatherBtn.addEventListener("click", () => {
       searchContainer.removeChild(locationError);
     }, 1500);
 
+    location.focus();
+
     return;
   }
 
   fetchWeather(location);
 
+  const dotsContainer = document.getElementsByClassName("dots-container")[0];
   const weatherContainer = document.getElementById("weather-container");
-  weatherContainer.style.display = "block";
+  const locationField = document.getElementById("location");
+  const getWeatherBtn = document.getElementById("get-weather-btn");
+  dotsContainer.style.display = "flex";
+  getWeatherBtn.style.display = "none";
+
+  setTimeout(() => {
+    dotsContainer.style.display = "none";
+    weatherContainer.style.display = "block";
+    locationField.style.display = "none";
+  }, 2000);
 });
